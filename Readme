@@ -1,0 +1,18 @@
+Scurtu Roxana-Daniela 323CA
+In aceasta tema am implementat requestul sub forma unei structuri pentru a usura modificarea requestului.
+
+Am folosit c++ pentru o implementare mult mai usoara si functiile cele mai importante sunt:
+ - get_request_string(struct request req) => transforma structura intr-un string pentru a-l trimite
+ - add_header(struct request req, string header) => adauga un header nou in structura
+ - do_request(struct request req) => deschide socketul si trimite requestul
+ - return_body/header(string response) => extrage body-ul/header-ul din raspuns
+ - request add_cookies(struct request req, string header) => extrage cookie-urile din raspuns si le adauga la request ul viitor
+ - dns(char * hostname) trasnforma domeniul in ip pentru ultimul task
+ - implode(const vector<string>& elems, char delim) => transforma vectorul de headere intr-un string
+
+In fiecare task am extras din raspuns campurile necesare pentru rezolvarea task-ului urmator folosind libraria urmatoare :
+https://github.com/nlohmann/json
+
+Am ales aceasta librarie pentru review-urile pozitive pe care le-a primit si pentru usurinta scrierii codului folosind
+aceasta librarie moderna. Desi nu estea cea mai rapida ca performanta, pentru aceste task-uri s-a descurcat destul de bine.
+
